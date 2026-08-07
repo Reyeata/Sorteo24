@@ -4,12 +4,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebas
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "PEGA_AQUI_TU_API_KEY",
-  authDomain: "PEGA_AQUI_TU_AUTH_DOMAIN",
-  projectId: "PEGA_AQUI_TU_PROJECT_ID",
-  storageBucket: "PEGA_AQUI_TU_STORAGE_BUCKET",
-  messagingSenderId: "PEGA_AQUI_TU_MESSAGING_SENDER_ID",
-  appId: "PEGA_AQUI_TU_APP_ID"
+  apiKey: "AIzaSyDwUFIwCnTjmPwsiFmgH5SKLULxXQNKxA0",
+  authDomain: "sorteo24-38e1b.firebaseapp.com",
+  projectId: "sorteo24-38e1b",
+  storageBucket: "sorteo24-38e1b.firebasestorage.app",
+  messagingSenderId: "1055855988813",
+  appId: "1:1055855988813:web:a224e8b41b552571908c04"
 };
 
 const app = initializeApp(firebaseConfig);
