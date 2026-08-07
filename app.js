@@ -36,24 +36,24 @@ startBtn.addEventListener("click", async () => {
   const name = nameInput.value.trim().replace(/\s+/g, " ");
 
   if (!name) return showError("Escribe tu nombre primero.");
-  if (name.length < 2) return showError("Escribe un nombre válido.");
+  if (name.length < 2) return showError("Escribe un nombre vÃ¡lido.");
 
   startBtn.disabled = true;
   message.hidden = false;
-  message.textContent = "🎡 Buscando tus números...";
+  message.textContent = "ðŸŽ¡ Buscando tus nÃºmeros...";
 
   try {
     const participantRef = doc(collection(db, "participants"));
 
     await runTransaction(db, async (transaction) => {
       const snapshot = await getDocs(collection(db, "participants"));
-      if (snapshot.size >= 12) throw new Error("El sorteo ya está completo.");
+      if (snapshot.size >= 12) throw new Error("El sorteo ya estÃ¡ completo.");
 
       const normalized = name.toLowerCase();
       for (const item of snapshot.docs) {
         const data = item.data();
         if ((data.nameNormalized || "").toLowerCase() === normalized) {
-          throw new Error("Ese nombre ya está registrado.");
+          throw new Error("Ese nombre ya estÃ¡ registrado.");
         }
       }
 
@@ -65,7 +65,7 @@ startBtn.addEventListener("click", async () => {
 
       const available = [];
       for (let n = 1; n <= 24; n++) if (!used.has(n)) available.push(n);
-      if (available.length < 2) throw new Error("No quedan dos números disponibles.");
+      if (available.length < 2) throw new Error("No quedan dos nÃºmeros disponibles.");
 
       const a = available[Math.floor(Math.random() * available.length)];
       const rest = available.filter(n => n !== a);
@@ -88,12 +88,12 @@ startBtn.addEventListener("click", async () => {
     await loadCount();
   } catch (err) {
     message.hidden = true;
-    showError(err.message || "Ocurrió un error. Intenta nuevamente.");
+    showError(err.message || "OcurriÃ³ un error. Intenta nuevamente.");
     await loadCount();
     startBtn.disabled = false;
   }
 });
 
 loadCount().catch(() => {
-  showError("Todavía no está conectada la configuración de Firebase.");
+  showError("TodavÃ­a no estÃ¡ conectada la configuraciÃ³n de Firebase.");
 });
