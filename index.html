@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sorteo 24</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <div class="badge">🎡 SORTEO 24</div>
+      <h1>¡Bienvenido!</h1>
+      <p class="subtitle">Cada participante recibirá <strong>2 números únicos</strong> del 1 al 24.</p>
+
+      <div class="progress-wrap">
+        <div class="progress-text"><span id="count">0</span> de 12 participantes</div>
+        <div class="progress"><div id="progressBar"></div></div>
+      </div>
+
+      <label for="name">Tu nombre</label>
+      <input id="name" type="text" maxlength="40" placeholder="Escribe tu nombre" autocomplete="name">
+
+      <button id="startBtn" class="primary">🎲 Obtener mis números</button>
+
+      <div id="message" class="message" hidden></div>
+
+      <div id="result" class="result" hidden>
+        <p>🎉 ¡Tus números son!</p>
+        <div class="numbers">
+          <span id="number1">--</span>
+          <span id="number2">--</span>
+        </div>
+        <p class="small">Guárdalos bien. Estos números quedan reservados para ti.</p>
+      </div>
+
+      <div id="error" class="error" hidden></div>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
